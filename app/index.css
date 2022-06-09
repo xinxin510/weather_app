@@ -1,0 +1,88 @@
+html, body, #app{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1fc3cc; /*  For browsers that do not support gradients */
+  background-image: linear-gradient(#1fd0be, #20cbc1, #1fc3cc, #1cb9d6, #1baee0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Nunito', sans-serif;
+  color: #ffffff;
+}
+
+.margin {
+  margin: 40px;
+}
+
+/* flex styling */
+.flex {
+  display: flex
+}
+
+.alignItemsTop {
+  align-items: flex-start;
+}
+
+.justifySpaceBetween {
+  justify-content: space-between;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+/* color styling */
+
+.lightBlue {
+  color: #d5f8fe;
+}
+
+.darkBlue {
+  color: #1baee0;
+}
+
+.lightGrey {
+  color: #dadce4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #d5f8fe;
+}
+
+input, button {
+  border: 0px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.search {
+  border-bottom: 1px solid #d5f8fe;
+  width: 70%;
+}
+
+.toggleButton {
+  width: 10%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 5px;
+  font-weight: 600;
+  color: #747474;
+}
+
+.toggleButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+a {
+  margin: 0 10px;
+}
