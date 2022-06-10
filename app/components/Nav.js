@@ -10,7 +10,7 @@ export default function Nav({metric, search, toggleMetric}) {
   }
 
   return (
-    <div className='flex justifySpaceBetween margin'>
+    <div className='flex justifySpaceBetween margin40'>
       <div className='search flex justifySpaceBetween'>
         <input type="text" placeholder='Eg. San Francisco' value={input} onChange={(e) => setInput(e.target.value)}/>
         <button onClick={submitSearch}><MdSearch className='lightBlue' size={20}/></button>

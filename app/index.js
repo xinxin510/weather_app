@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Nav from './components/Nav';
 import NotFound from './components/NotFound';
+import Loading from './components/Loading';
 import Results from './components/Results';
 import fetchWeatherData from './utils/api';
 
 function App () {
   const [city, setCity] = React.useState('London');
-  const [weatherInfo, setWeatherInfo] = React.useState([]);
+  const [weatherInfo, setWeatherInfo] = React.useState(null);
   const [metric, setMetric] = React.useState('F');
   const [error, setError] = React.useState(null);
 
@@ -32,7 +33,8 @@ function App () {
   return (
     <div className='container'>
       <Nav metric={metric} search={search} toggleMetric={toggleMetric}/>
-      {error ? <NotFound errorMsg={error}/> : <Results />}
+      {error && <NotFound errorMsg={error}/>}
+      {!error && !weatherInfo ? <Loading /> : <Results weatherInfo={weatherInfo}/>}
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function fetchWeatherData(location) {
     if (res.status === 200) {
       return res.json()
     }
-    if (res.status === 400) {
+    if (res.status === 400 || res.status === 404) {
       throw 'City not found';
     }
     return res.json();
