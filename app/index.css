@@ -30,8 +30,16 @@ html, body, #app{
   display: flex
 }
 
+.flexCol {
+  flex-direction: column;
+}
+
 .alignItemsTop {
   align-items: flex-start;
+}
+
+.alignItemsCenter {
+  align-items: center;
 }
 
 .justifySpaceBetween {
@@ -42,6 +50,9 @@ html, body, #app{
   justify-content: center;
 }
 
+.gap15 {
+  gap: 15px
+}
 
 /* color styling */
 
@@ -57,11 +68,45 @@ html, body, #app{
   color: #dadce4;
 }
 
+/* font size */
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+h5 {
+  font-size: 1.125rem;
+}
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* nav section */
 input:focus {
   outline: none;
 }
@@ -97,4 +142,25 @@ input, button {
 
 a {
   margin: 0 10px;
+}
+
+/* results section */
+
+.overview {
+  border-bottom: 1px solid #d5f8fe;
+  padding-bottom: 60px;
+}
+
+.summaryContainer {
+  width: 20%;
+}
+
+.weatherIcon {
+  font-size: 80px;
+  height: 80px;
+}
+
+.locationIcon {
+  font-size: 20px;
+  margin-right: 10px;
 }
