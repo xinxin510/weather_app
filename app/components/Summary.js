@@ -27,7 +27,7 @@ export default function Summary({location, alerts, dayInfo, day}) {
           {day === 0 && <h3>Today</h3>}
           <small>{getDateString(datetime)}</small>
         </div>
-        <WeatherIcons icon={icon}/>
+        <WeatherIcons icon={icon} size={80}/>
       </div>
       <h1>{Math.round(temp)}</h1>
       <div className='flex'>

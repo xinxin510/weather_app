@@ -1,5 +1,6 @@
 *{
   margin: 0;
+  box-sizing: border-box;
 }
 
 html, body, #app{
@@ -19,6 +20,10 @@ html, body, #app{
 
 .margin10 {
   margin: 10px;
+}
+
+.marginBtm {
+  margin-bottom: 15px;
 }
 
 .center {
@@ -52,6 +57,10 @@ html, body, #app{
 
 .gap15 {
   gap: 15px
+}
+
+.gap25 {
+  gap: 25px
 }
 
 /* color styling */
@@ -155,12 +164,38 @@ a {
   width: 20%;
 }
 
-.weatherIcon {
-  font-size: 80px;
-  height: 80px;
-}
 
 .locationIcon {
   font-size: 20px;
   margin-right: 10px;
+}
+
+.weatherIcon {
+
+}
+
+.caurosel {
+  width: 695px;
+  height: 153px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hourlyCards {
+  position: absolute;
+  top: 0;
+  transition: all 1s linear;
+}
+
+.hourlySubCard {
+  border: 0.5px solid #ffffff;
+  border-radius: 30px;
+  width: 65px;
+  padding: 10px;
+  background-color: #1d9596;
+  color: #d5f8fe;
+}
+
+.currHourlySubCard {
+  background-color: #a7e8ea;
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import Summary from './Summary';
 import Details from './Details';
-import Hourly from './hourly';
+import Hourly from './Hourly';
 
 export default function Results({weatherInfo}) {
   const [day, setDay] = React.useState(0);
   return (
     <div className='margin40'>
-      <div className='overview'>
+      <div className='overview flex justifySpaceBetween'>
         <Summary
           location={weatherInfo.resolvedAddress}
           alerts={weatherInfo.alerts}
