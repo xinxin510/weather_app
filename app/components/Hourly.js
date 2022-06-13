@@ -26,13 +26,26 @@ export default function Hourly({timeZone, hourlyInfo, description, metric}) {
     }
   }
 
+  var backArrBtnClick = (windowWd) => {
+    return windowWd <= 480 ? setAbsLeft(absLeft => absLeft+ 90 * 4) : setAbsLeft(absLeft => absLeft+ 90 * 8);
+  }
+
+  var isVisibleForwardBtn = (windowWd) => {
+    var moreCards = windowWd > 480 ? (hourlyArr.length - 8) * -90 : (hourlyArr.length - 4) * -90;
+    return absLeft > moreCards;
+  }
+
+  var forwardBtnClick = (windowWd) => {
+    return windowWd <= 480 ? setAbsLeft(absLeft => absLeft- 90 * 4) : setAbsLeft(absLeft => absLeft- 90 * 8);
+  }
+
   return (
     <div>
       <div className='flex gap25 alignItemsCenter'>
         <MdArrowBackIosNew
           className='arrowBtn'
           style={{visibility: absLeft < 0 ? 'visible' : 'hidden'}}
-          onClick={() => setAbsLeft(absLeft => absLeft+ 90 * 8)}
+          onClick={() => backArrBtnClick(window.innerWidth)}
         />
         <div className='caurosel'>
           <div className='flex gap25 hourlyCards' style={{left: absLeft}}>
@@ -47,8 +60,8 @@ export default function Hourly({timeZone, hourlyInfo, description, metric}) {
         </div>
         <MdArrowForwardIos
           className='arrowBtn'
-          style={{visibility: absLeft > (hourlyArr.length - 8) * -90 ? 'visible' : 'hidden'}}
-          onClick={() => setAbsLeft(absLeft => absLeft- 90 * 8)}
+          style={{visibility: isVisibleForwardBtn(window.innerWidth) ? 'visible' : 'hidden'}}
+          onClick={() => forwardBtnClick(window.innerWidth)}
         />
       </div>
       <p className='description'>{description}</p>

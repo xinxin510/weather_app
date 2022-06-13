@@ -89,6 +89,10 @@ html, body, #app{
   color: #607d89;
 }
 
+.darkerGreen {
+  color: #2a4a58
+}
+
 /* font size */
 h1 {
   font-size: 4rem;
@@ -282,4 +286,9 @@ a {
   .hourlyCard {
     gap: 5px;
   }
+
+  .caurosel {
+    width: 335px;
+  }
+  
 }
