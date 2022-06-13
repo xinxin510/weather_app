@@ -8,7 +8,7 @@ import Results from './components/Results';
 import fetchWeatherData from './utils/api';
 
 function App () {
-  const [city, setCity] = React.useState('London');
+  const [city, setCity] = React.useState('Maple Grove');
   const [weatherInfo, setWeatherInfo] = React.useState(null);
   const [metric, setMetric] = React.useState('F');
   const [error, setError] = React.useState(null);
@@ -18,11 +18,13 @@ function App () {
     fetchWeatherData(city)
     .then(data => {
       console.log('data in index', data);
-      setWeatherInfo(data)
+      setWeatherInfo(data);
+      setError(null);
     })
     .catch((err) => {
-      console.log('err in index', err);
-      setError(err)
+      console.log('err in index', err); 
+      setError(err);
+      setWeatherInfo(null)
     })
   }, [city])
 
@@ -34,7 +36,8 @@ function App () {
     <div className='container'>
       <Nav metric={metric} search={search} toggleMetric={toggleMetric}/>
       {error && <NotFound errorMsg={error}/>}
-      {!error && !weatherInfo ? <Loading /> : <Results weatherInfo={weatherInfo}/>}
+      {!error && !weatherInfo && <Loading />} 
+      {!error && weatherInfo && <Results weatherInfo={weatherInfo} metric={metric}/>}
     </div>
   );
 }

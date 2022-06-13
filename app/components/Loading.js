@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function Loading({content='Loading', speed=300}) {
+export default function Loading({content='Loading', speed=200}) {
   const [text, setText] = React.useState(content);
 
   React.useEffect(() => {
       const id = setInterval(() => {
         // text === content + '...' ? setText(content) : setText(text => text + '.');
         setText(text => text === content + '...' ? content : text + '.')
-      }, 1000);
+      }, speed);
 
       return () => clearInterval(id)
 
@@ -15,6 +15,6 @@ export default function Loading({content='Loading', speed=300}) {
   )
 
   return (
-    <div className='margin40 center'>{text}</div>
+    <h3 className='margin40 center'>{text}</h3>
   )
 }

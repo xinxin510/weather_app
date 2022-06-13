@@ -4,12 +4,12 @@
 }
 
 html, body, #app{
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background-color: #1fc3cc; /*  For browsers that do not support gradients */
-  background-image: linear-gradient(#1fd0be, #20cbc1, #1fc3cc, #1cb9d6, #1baee0);
+  background: linear-gradient(#1fd0be, #20cbc1, #1fc3cc, #1cb9d6, #1baee0);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   font-family: 'Nunito', sans-serif;
   color: #ffffff;
 }
@@ -24,6 +24,10 @@ html, body, #app{
 
 .marginBtm {
   margin-bottom: 15px;
+}
+
+.marginTop {
+  margin-top: 15px;
 }
 
 .center {
@@ -55,6 +59,10 @@ html, body, #app{
   justify-content: center;
 }
 
+.flexWrap {
+  flex-wrap: wrap;
+}
+
 .gap15 {
   gap: 15px
 }
@@ -75,6 +83,10 @@ html, body, #app{
 
 .lightGrey {
   color: #dadce4;
+}
+
+.darkGreen {
+  color: #607d89;
 }
 
 /* font size */
@@ -104,11 +116,15 @@ h6 {
 p {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
-  margin-top: 4px;
-  margin-bottom: 12px;
 }
 
+.bolder {
+  font-weight: bolder;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
 
 .container {
   max-width: 1200px;
@@ -170,9 +186,6 @@ a {
   margin-right: 10px;
 }
 
-.weatherIcon {
-
-}
 
 .caurosel {
   width: 695px;
@@ -184,7 +197,7 @@ a {
 .hourlyCards {
   position: absolute;
   top: 0;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
 }
 
 .hourlySubCard {
@@ -198,4 +211,46 @@ a {
 
 .currHourlySubCard {
   background-color: #a7e8ea;
+  color: #ffffff;
+}
+
+.description {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+
+/* details section */
+
+.detailsContainer {
+  margin: 50px 0;
+  width: 100%;
+}
+
+.detailCard {
+  width: 240px;
+  background-color: #ddf4f9;
+  padding: 30px 20px;
+  color: #2a4a58
+}
+
+/* forcast section */
+.forcastCard {
+  padding: 10px 30px;
+  border: 0.5px solid #ffffff;
+  border-radius: 30px;
+  color: #d5f8fe;
+  background-color: #1d9596;
+}
+
+.forcastCard:hover{
+  position: relative;
+  top: 10px;
+  left: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.currForcastCard {
+  background-color: #a7e8ea;
+  color: #ffffff;
 }

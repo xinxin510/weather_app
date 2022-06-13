@@ -2,7 +2,7 @@ import React from 'react';
 import WeatherIcons from './WeatherIcons';
 import {MdArrowBackIosNew, MdArrowForwardIos} from 'react-icons/md';
 
-export default function Hourly({timeZone, hourlyInfo}) {
+export default function Hourly({timeZone, hourlyInfo, description, metric}) {
   const [absLeft, setAbsLeft] = React.useState(0);
 
   var getCurrHour = (timeZone) => {
@@ -27,26 +27,29 @@ export default function Hourly({timeZone, hourlyInfo}) {
   }
 
   return (
-    <div className='flex gap25 alignItemsCenter'>
-      <MdArrowBackIosNew
-        style={{visibility: absLeft < 0 ? 'visible' : 'hidden'}}
-        onClick={() => setAbsLeft(absLeft => absLeft+90)}
-      />
-      <div className='caurosel'>
-        <div className='flex gap25 hourlyCards' style={{left: absLeft}}>
-          {hourlyArr.map((hourInfo, index) => <div key={index} className='center'>
-            <h5 className='marginBtm'>{index === 0 ? 'Now' : convertTime(hourInfo.datetime)}</h5>
-            <div className={index === 0 ? 'hourlySubCard center currHourlySubCard' : 'hourlySubCard center'}>
-              <div><WeatherIcons icon={hourInfo.icon} size={50}/></div>
-              <h5>{Math.round(hourInfo.temp)}</h5>
-            </div>
-          </div>)}
+    <div>
+      <div className='flex gap25 alignItemsCenter'>
+        <MdArrowBackIosNew
+          style={{visibility: absLeft < 0 ? 'visible' : 'hidden'}}
+          onClick={() => setAbsLeft(absLeft => absLeft+90)}
+        />
+        <div className='caurosel'>
+          <div className='flex gap25 hourlyCards' style={{left: absLeft}}>
+            {hourlyArr.map((hourInfo, index) => <div key={index} className='center'>
+              <h5 className='marginBtm'>{index === 0 ? 'Now' : convertTime(hourInfo.datetime)}</h5>
+              <div className={index === 0 ? 'hourlySubCard center currHourlySubCard' : 'hourlySubCard center'}>
+                <WeatherIcons icon={hourInfo.icon} size={50} color='lightBlue'/>
+                <h5>{metric === 'F' ? Math.round(hourInfo.temp) + '°' : Math.round(hourInfo.temp - 32) + '°'}</h5>
+              </div>
+            </div>)}
+          </div>
         </div>
+        <MdArrowForwardIos
+          style={{visibility: absLeft > (hourlyArr.length - 8) * -90 ? 'visible' : 'hidden'}}
+          onClick={() => setAbsLeft(absLeft => absLeft-90)}
+        />
       </div>
-      <MdArrowForwardIos
-        style={{visibility: absLeft > (hourlyArr.length - 8) * -90 ? 'visible' : 'hidden'}}
-        onClick={() => setAbsLeft(absLeft => absLeft-90)}
-      />
+      <p className='description'>{description}</p>
     </div>
   )
 }

@@ -17,12 +17,12 @@ export default function Nav({metric, search, toggleMetric}) {
       </div>
       <div className='flex alignItemsTop toggleButton justifyCenter'>
         <a
-          className={metric === 'C' ? 'darkBlue' : 'lightGrey'}
+          className={metric === 'C' ? 'darkBlue bolder' : 'lightGrey'}
           onClick={toggleMetric}
         >C</a>
         /
         <a
-          className={metric === 'F' ? 'darkBlue' : 'lightGrey'}
+          className={metric === 'F' ? 'darkBlue bolder' : 'lightGrey'}
           onClick={toggleMetric}
         >F</a>
       </div>
