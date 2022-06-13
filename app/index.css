@@ -153,6 +153,7 @@ input, button {
 
 .toggleButton {
   width: 10%;
+  min-width: 60px;
   background-color: #ffffff;
   border-radius: 20px;
   padding: 5px;
@@ -186,6 +187,15 @@ a {
   margin-right: 10px;
 }
 
+.arrowBtn {
+  width: 10px;
+  height: 10px;
+}
+
+.arrowBtn:hover {
+  width: 15px;
+  height: 15px;
+}
 
 .caurosel {
   width: 695px;
@@ -197,7 +207,7 @@ a {
 .hourlyCards {
   position: absolute;
   top: 0;
-  transition: all 0.5s linear;
+  transition: all 1s linear;
 }
 
 .hourlySubCard {
@@ -211,7 +221,7 @@ a {
 
 .currHourlySubCard {
   background-color: #a7e8ea;
-  color: #ffffff;
+  color: #2a4a58;
 }
 
 .description {
@@ -252,5 +262,24 @@ a {
 
 .currForcastCard {
   background-color: #a7e8ea;
-  color: #ffffff;
+  color: #2a4a58;
+}
+
+@media screen and (max-width: 480px) {
+  .overview {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .summaryContainer {
+    width: 100%;
+  }
+
+  .detailCard {
+    width: 100%;
+  }
+
+  .hourlyCard {
+    gap: 5px;
+  }
 }

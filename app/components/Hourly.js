@@ -30,23 +30,25 @@ export default function Hourly({timeZone, hourlyInfo, description, metric}) {
     <div>
       <div className='flex gap25 alignItemsCenter'>
         <MdArrowBackIosNew
+          className='arrowBtn'
           style={{visibility: absLeft < 0 ? 'visible' : 'hidden'}}
-          onClick={() => setAbsLeft(absLeft => absLeft+90)}
+          onClick={() => setAbsLeft(absLeft => absLeft+ 90 * 8)}
         />
         <div className='caurosel'>
           <div className='flex gap25 hourlyCards' style={{left: absLeft}}>
             {hourlyArr.map((hourInfo, index) => <div key={index} className='center'>
               <h5 className='marginBtm'>{index === 0 ? 'Now' : convertTime(hourInfo.datetime)}</h5>
               <div className={index === 0 ? 'hourlySubCard center currHourlySubCard' : 'hourlySubCard center'}>
-                <WeatherIcons icon={hourInfo.icon} size={50} color='lightBlue'/>
+                <WeatherIcons icon={hourInfo.icon} size={50} color={index === 0 ? 'darkerGreen' : 'lightBlue'}/>
                 <h5>{metric === 'F' ? Math.round(hourInfo.temp) + '°' : Math.round(hourInfo.temp - 32) + '°'}</h5>
               </div>
             </div>)}
           </div>
         </div>
         <MdArrowForwardIos
+          className='arrowBtn'
           style={{visibility: absLeft > (hourlyArr.length - 8) * -90 ? 'visible' : 'hidden'}}
-          onClick={() => setAbsLeft(absLeft => absLeft-90)}
+          onClick={() => setAbsLeft(absLeft => absLeft- 90 * 8)}
         />
       </div>
       <p className='description'>{description}</p>
