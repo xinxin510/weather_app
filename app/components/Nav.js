@@ -1,11 +1,11 @@
 import React from 'react';
 import {MdSearch} from 'react-icons/md';
 
-export default function Nav({metric, search, toggleMetric}) {
+export default function Nav({metric, setCity, toggleMetric}) {
   const [input, setInput] = React.useState('');
 
   const submitSearch = () => {
-    search(input);
+    setCity(input);
     setInput('')
   }
 

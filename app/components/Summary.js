@@ -29,7 +29,7 @@ export default function Summary({location, dayInfo, day, metric}) {
         </div>
         <WeatherIcons icon={icon} size={80} color='lightBlue' />
       </div>
-      <h1>{metric === 'F' ? Math.round(temp) + '°' : Math.round(temp - 32) + '°'}</h1>
+      <h1>{metric === 'F' ? Math.round(temp) + '°' : Math.round((temp - 32) * 5/9) + '°'}</h1>
       <div className='flex marginTop'>
         <MdLocationPin className='locationIcon'/>
         <h5>{getCity(location)}</h5>

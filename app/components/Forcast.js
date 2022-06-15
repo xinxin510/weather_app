@@ -1,7 +1,7 @@
 import React from 'react';
 import WeatherIcons from './WeatherIcons';
 
-export default function Forcast({forcast, day, metric, updateDay}) {
+export default function Forcast({forcast, day, metric, setDay, setAbsLeft}) {
     const getDateString = (date) => {
         var dateArr = date.split('-');
         dateArr[1] = Number(dateArr[1]) - 1;
@@ -18,8 +18,12 @@ export default function Forcast({forcast, day, metric, updateDay}) {
             result = Math.min(result, hour.temp) : 
             result = Math.max(result, hour.temp)
         })
-        result = Math.round(result);
-        return metric === 'F' ? result + '°' : (result - 32) + '°';
+        return metric === 'F' ? Math.round(result) + '°' : Math.round((result - 32) *  5/9) + '°';
+    }
+
+    const changeDay = (index) => {
+        setDay(index);
+        setAbsLeft(0);
     }
 
     return (
@@ -31,7 +35,7 @@ export default function Forcast({forcast, day, metric, updateDay}) {
                         <div 
                             key={index} 
                             className={index === day ? 'flex justifySpaceBetween alignItemsCenter forcastCard currForcastCard' : 'flex justifySpaceBetween alignItemsCenter forcastCard'}
-                            onClick={() => updateDay(index)}
+                            onClick={() => changeDay(index)}
                         >
                             <h4>{index === 0 ? 'Today' : getDateString(dayInfo.datetime)}</h4>
                             <WeatherIcons icon={dayInfo.icon} size={50}/> 

@@ -38,7 +38,7 @@ export default function Details({dayInfo, metric}) {
             <div className='detailCard flex gap25 justifySpaceBetween' key={card}>
               <div>
                 <small className='darkGreen uppercase border'>{card}</small>
-                <h3>{card === 'feels like' && metric === 'C' ? `${Number(detailsMap[card].slice(0, detailsMap[card].length - 1)) - 32}°`  : detailsMap[card]}</h3>
+                <h3>{card === 'feels like' && metric === 'C' ? `${Math.round(Number(detailsMap[card].slice(0, detailsMap[card].length - 1) - 32) *  5/9)}°`  : detailsMap[card]}</h3>
               </div>
               <WeatherIcons icon={card} size={50}/>
 

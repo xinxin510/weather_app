@@ -1,10 +1,9 @@
-import { apiKey } from '../../config';
+const { apiKey } = require('../../config');
 
-export default function fetchWeatherData(location) {
+var fetchWeatherData = (location) => {
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`;
   return fetch(url)
   .then(res => {
-    console.log('res', res);
     if (res.status === 200) {
       return res.json()
     }
@@ -14,11 +13,11 @@ export default function fetchWeatherData(location) {
     return res.json();
   })
   .then(data => {
-    console.log('fetch and get data', data);
     return data
   })
   .catch(err => {
-    console.log('fetch and get err', err);
     throw err
   })
 }
+
+module.exports = {fetchWeatherData};

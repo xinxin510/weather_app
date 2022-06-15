@@ -1,30 +1,11 @@
 import React from 'react';
 import WeatherIcons from './WeatherIcons';
 import {MdArrowBackIosNew, MdArrowForwardIos} from 'react-icons/md';
+import {getCurrHour, convertTime} from '../utils/helpers';
 
-export default function Hourly({timeZone, hourlyInfo, description, metric}) {
-  const [absLeft, setAbsLeft] = React.useState(0);
+export default function Hourly({timeZone, hourlyInfo, description, metric, isToday, absLeft, setAbsLeft}) {
 
-  var getCurrHour = (timeZone) => {
-    var date = new Date();
-    var hour = date.toLocaleString('en-US', {hour: '2-digit', hour12: false, timeZone})
-    return hour[0] === 0 ? Number(hour[1]) : Number(hour);
-  }
-
-  var hourlyArr = hourlyInfo.filter((hour, index) => index >= getCurrHour(timeZone))
-
-  var convertTime = (str) => {
-    var time = Number(str.slice(0, 2));
-    if (time === 0) {
-      return '12 am';
-    } else if (time > 0 && time < 12) {
-      return time + ' am';
-    } else if (time === 12) {
-      return '12 pm';
-    } else {
-      return (time - 12) + ' pm';
-    }
-  }
+  var hourlyArr = isToday ? hourlyInfo.filter((hour, index) => index >= getCurrHour(timeZone)) : hourlyInfo;
 
   var backArrBtnClick = (windowWd) => {
     return windowWd <= 480 ? setAbsLeft(absLeft => absLeft+ 90 * 4) : setAbsLeft(absLeft => absLeft+ 90 * 8);
@@ -46,14 +27,15 @@ export default function Hourly({timeZone, hourlyInfo, description, metric}) {
           className='arrowBtn'
           style={{visibility: absLeft < 0 ? 'visible' : 'hidden'}}
           onClick={() => backArrBtnClick(window.innerWidth)}
+          data-testid="backArrow"
         />
         <div className='caurosel'>
           <div className='flex gap25 hourlyCards' style={{left: absLeft}}>
             {hourlyArr.map((hourInfo, index) => <div key={index} className='center'>
-              <h5 className='marginBtm'>{index === 0 ? 'Now' : convertTime(hourInfo.datetime)}</h5>
+              <h5 className='marginBtm'>{isToday && index === 0 ? 'Now' : convertTime(hourInfo.datetime)}</h5>
               <div className={index === 0 ? 'hourlySubCard center currHourlySubCard' : 'hourlySubCard center'}>
                 <WeatherIcons icon={hourInfo.icon} size={50} color={index === 0 ? 'darkerGreen' : 'lightBlue'}/>
-                <h5>{metric === 'F' ? Math.round(hourInfo.temp) + '°' : Math.round(hourInfo.temp - 32) + '°'}</h5>
+                <h5>{metric === 'F' ? Math.round(hourInfo.temp) + '°' : Math.round((hourInfo.temp - 32) *  5/9) + '°'}</h5>
               </div>
             </div>)}
           </div>
@@ -62,6 +44,7 @@ export default function Hourly({timeZone, hourlyInfo, description, metric}) {
           className='arrowBtn'
           style={{visibility: isVisibleForwardBtn(window.innerWidth) ? 'visible' : 'hidden'}}
           onClick={() => forwardBtnClick(window.innerWidth)}
+          data-testid="forwardArrow"
         />
       </div>
       <p className='description'>{description}</p>

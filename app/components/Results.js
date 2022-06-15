@@ -6,8 +6,8 @@ import Forcast from './Forcast';
 
 export default function Results({weatherInfo, metric}) {
   const [day, setDay] = React.useState(0);
+  const [absLeft, setAbsLeft] = React.useState(0);
 
-  const updateDay = (index) => setDay(index);
 
   return (
     <div className='margin40'>
@@ -23,6 +23,9 @@ export default function Results({weatherInfo, metric}) {
           hourlyInfo={weatherInfo.days[day].hours}
           description={weatherInfo.days[day].description}
           metric={metric}
+          isToday={day === 0}
+          absLeft={absLeft}
+          setAbsLeft={setAbsLeft}
         />
       </div>
       <Details 
@@ -33,7 +36,8 @@ export default function Results({weatherInfo, metric}) {
         forcast={weatherInfo.days.slice(0, 10)}
         day={day}
         metric={metric}
-        updateDay={updateDay}
+        setDay={setDay}
+        setAbsLeft={setAbsLeft}
       />
     </div>
   )
