@@ -7,7 +7,7 @@ import helpers from '../utils/helpers';
 
 describe('<Results />', () => {
     test('a forward arrow button appears in the hourly temperature section, it shows temperatures from now to 7pm', () => {
-        const mock = jest.spyOn(helpers, "getCurrHour").mockImplementation(jest.fn(() => 0));
+        const mock = jest.spyOn(helpers, "getCurrHour").mockReturnValue(0);
         render(<Results 
             weatherInfo={exampleData}
             metric='F'
@@ -19,7 +19,7 @@ describe('<Results />', () => {
     })
 
     test('When the forward arrow button is clicked, it shows temperature at 8pm, 9pm and 10pm, and this button is invisible', () => {
-        const mock = jest.spyOn(helpers, "getCurrHour").mockImplementation(jest.fn(() => 0));
+        const mock = jest.spyOn(helpers, "getCurrHour").mockReturnValue(0);
         render(<Results 
             weatherInfo={exampleData}
             metric='F'

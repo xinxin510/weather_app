@@ -1,24 +1,10 @@
 import React from 'react';
 import WeatherIcons from './WeatherIcons';
 import {MdLocationPin} from 'react-icons/md';
+import {getCityState, getDateString} from '../utils/helpers';
 
 export default function Summary({location, dayInfo, day, metric}) {
   const {datetime, icon, temp} = dayInfo;
-
-  const getDateString = (date) => {
-    var dateArr = date.split('-');
-    dateArr[1] = Number(dateArr[1]) - 1;
-    var date = new Date(...dateArr);
-    var formatedDate = date.toUTCString();
-    var yearIndex = formatedDate.indexOf(dateArr[0]);
-    return formatedDate.slice(0, yearIndex - 1);
-  }
-
-  const getCity = (location) => {
-    var array = location.split(',');
-    var city = array[0] + ', ' + array[1];
-    return city;
-  }
 
   return (
     <div className='flex flexCol alignItemsCenter summaryContainer'>
@@ -29,10 +15,10 @@ export default function Summary({location, dayInfo, day, metric}) {
         </div>
         <WeatherIcons icon={icon} size={80} color='lightBlue' />
       </div>
-      <h1>{metric === 'F' ? Math.round(temp) + '°' : Math.round((temp - 32) * 5/9) + '°'}</h1>
+      <h1 data-testid='temp'>{metric === 'F' ? Math.round(temp) + '°' : Math.round((temp - 32) * 5/9) + '°'}</h1>
       <div className='flex marginTop'>
         <MdLocationPin className='locationIcon'/>
-        <h5>{getCity(location)}</h5>
+        <h5>{getCityState(location)}</h5>
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ describe('<Hourly />', () => {
     })
     
     test("shows now and further hourly temp while checking today's hourly temp", () => {
-        const mock = jest.spyOn(helpers, "getCurrHour").mockImplementation(jest.fn(() => 0));
+        const mock = jest.spyOn(helpers, "getCurrHour").mockReturnValue(0);
         render(<Hourly 
                 timeZone={exampleData.timezone}
                 description={exampleData.days[0].description}
@@ -33,7 +33,7 @@ describe('<Hourly />', () => {
     })
 
     test('shows hourly temp while checking when the date is not today', () => {
-        const mock = jest.spyOn(helpers, "getCurrHour").mockImplementation(jest.fn(() => 0));
+        const mock = jest.spyOn(helpers, "getCurrHour").mockReturnValue(0);
         render(<Hourly 
             timeZone={exampleData.timezone}
             description={exampleData.days[0].description}

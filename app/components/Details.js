@@ -1,10 +1,11 @@
 import React from 'react';
 import WeatherIcons from './WeatherIcons';
+import {convertHourMinutesTime} from '../utils/helpers';
 
 export default function Details({dayInfo, metric}) {
   const {sunrise, sunset, precip, humidity, windspeed, pressure, feelslike, visibility} = dayInfo;
 
-  const convertTime = (str) => {
+  const convertHourMinutesTime = (str) => {
     var hour = Number(str.slice(0,2));
     var min = str.slice(3, 5);
     if (hour === 0) {
@@ -19,8 +20,8 @@ export default function Details({dayInfo, metric}) {
   }
 
   const detailsMap = {
-    'sunrise': convertTime(sunrise),
-    'sunset': convertTime(sunset),
+    'sunrise': convertHourMinutesTime(sunrise),
+    'sunset': convertHourMinutesTime(sunset),
     'precipitation': Math.round(precip) + '%',
     'humidity': Math.round(humidity) + '%',
     'wind': Math.round(windspeed) + ' mile/h',

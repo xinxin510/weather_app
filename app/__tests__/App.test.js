@@ -1,5 +1,5 @@
 import {render, screen, fireEvent} from '@testing-library/react';
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 import React from 'react';
 import App from '../components/App';
 import {exampleData, londonData} from '../exampleData/exampleData';
@@ -34,11 +34,22 @@ describe('<App />', () => {
         expect(mockAPI).toHaveBeenCalledTimes(1);
         expect(screen.getByRole('textbox')).toBeInTheDocument();
         expect(await screen.findByText(/maple grove/i)).toBeInTheDocument();
+        expect(screen.queryByText(/london/i)).toBeNull();
         fireEvent.change(screen.getByRole('textbox'), {target: {value: 'london'}});
         fireEvent.click(screen.getByRole('button'));
         expect(mockAPISearch).toHaveBeenCalledTimes(2);
-        // expect(await screen.queryByText(/maple grove/i)).toBeNull();
         expect(await screen.findByText(/london/i)).toBeInTheDocument();
-    
+        expect(screen.queryByText(/maple grove/i)).toBeNull();
+    })
+
+    test('users can toggle temperature between celsius and fahrenheit', async() => {
+        const mockAPI = jest.spyOn(api, 'fetchWeatherData').mockResolvedValueOnce(londonData);
+        render(<App />);
+        expect(mockAPI).toHaveBeenCalledTimes(1);
+        expect((await screen.findByTestId('temp')).textContent).toBe('67°');
+        fireEvent.click(screen.getByText('C'));
+        expect((screen.getByTestId('temp')).textContent).toBe('19°');
+        fireEvent.click(screen.getByText('F'));
+        expect((screen.getByTestId('temp')).textContent).toBe('67°');
     })
 })
