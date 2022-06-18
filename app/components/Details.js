@@ -1,23 +1,11 @@
 import React from 'react';
 import WeatherIcons from './WeatherIcons';
 import {convertHourMinutesTime} from '../utils/helpers';
+import Tooltip from './Tooltip';
+import {FiInfo} from 'react-icons/fi';
 
 export default function Details({dayInfo, metric}) {
   const {sunrise, sunset, precip, humidity, windspeed, pressure, feelslike, visibility} = dayInfo;
-
-  const convertHourMinutesTime = (str) => {
-    var hour = Number(str.slice(0,2));
-    var min = str.slice(3, 5);
-    if (hour === 0) {
-      return '12:' + min + ' am';
-    } else if (hour > 0 && hour < 12) {
-      return hour + ':' + min + ' am';
-    } else if (hour === 12) {
-      return '12:' + min + 'pm'
-    } else {
-      return (hour - 12) + ':' + min + ' pm';
-    }
-  }
 
   const detailsMap = {
     'sunrise': convertHourMinutesTime(sunrise),
@@ -38,13 +26,13 @@ export default function Details({dayInfo, metric}) {
           return (
             <div className='detailCard flex gap25 justifySpaceBetween' key={card}>
               <div>
-                <small className='darkGreen uppercase border'>{card}</small>
+                <Tooltip title={card}>
+                  <small className='darkGreen uppercase border'>{card} <FiInfo /></small>
+                </Tooltip>
                 <h3>{card === 'feels like' && metric === 'C' ? `${Math.round(Number(detailsMap[card].slice(0, detailsMap[card].length - 1) - 32) *  5/9)}°`  : detailsMap[card]}</h3>
               </div>
               <WeatherIcons icon={card} size={50}/>
-
             </div>
-
           )
         })}
       </div>

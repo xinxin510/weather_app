@@ -156,8 +156,7 @@ input, button {
 }
 
 .toggleButton {
-  width: 10%;
-  min-width: 60px;
+  width: 100px;
   background-color: #ffffff;
   border-radius: 20px;
   padding: 5px;
@@ -244,7 +243,7 @@ a {
   width: 240px;
   background-color: #ddf4f9;
   padding: 30px 20px;
-  color: #2a4a58
+  color: #2a4a58;
 }
 
 /* forcast section */
@@ -268,6 +267,7 @@ a {
   background-color: #a7e8ea;
   color: #2a4a58;
 }
+
 
 @media screen and (max-width: 480px) {
   .overview {
