@@ -1,9 +1,9 @@
 # weather_app
 A simple weather mobile-friendly web app built with React.
 
-##Table of Contents
+## Table of Contents
 
-##Description
+## Description
 Check daily weather (hourly forcast) and 10-day forcast in your city or in any place in the world. 
 1. On the initial page load, the weather of Maple Grove, MN is shown. Users can check the weather of cities using the search bar.
 2. View today's hourly forecasts till the end of the day.
@@ -12,7 +12,7 @@ Check daily weather (hourly forcast) and 10-day forcast in your city or in any p
 5. Select a day to view hourly forcast and weather details.
 6. Toggle between Celsius and Fahrenheit temperatures to get more adequate results.
 
-##Installation
+## Installation
 1. Install dependencies:
 ```bash
 npm install
@@ -30,4 +30,4 @@ npm run start
 npm run build
 ```
 5. Open the project in your web browser http://localhost:8080/ 
-##Usage
+## Usage
