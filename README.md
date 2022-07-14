@@ -1,5 +1,6 @@
-# Weather APP
-A simple weather mobile-friendly web app built with React.
+# Weather App in React
+**A single-page mobile-friendly app built with React using 3rd-party weather API service.**
+Wrote config files for Webpack and Babel from scratch, and set up the React app with proper testing and tooling without the use of Create-React-App.
 
 ## Table of Contents
 
@@ -11,6 +12,7 @@ Check daily weather (hourly forcast) and 10-day forcast in your city or in any p
 4. View daily forecasts for the next ten days, including the high and low temperatures.
 5. Select a day to view hourly forcast and weather details.
 6. Toggle between Celsius and Fahrenheit temperatures to get more adequate results.
+7. Implemented custom tooltips to help users understand the metrics presented on the weather cards.
 ## Installation
 1. Install dependencies:
 ```bash
