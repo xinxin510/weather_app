@@ -39,10 +39,9 @@ module.exports = {
   apiKey: 'YOUR_KEY_HERE'
 }
 ```
-4. To run:
+4. Run webpack in development with:
 ```bash
 npm run start
-npm run build
 ```
 5. Open the project in your web browser http://localhost:8080/ 
 ## Usage
