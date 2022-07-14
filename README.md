@@ -11,7 +11,6 @@ Check daily weather (hourly forcast) and 10-day forcast in your city or in any p
 4. View daily forecasts for the next ten days, including the high and low temperatures.
 5. Select a day to view hourly forcast and weather details.
 6. Toggle between Celsius and Fahrenheit temperatures to get more adequate results.
-
 ## Installation
 1. Install dependencies:
 ```bash
