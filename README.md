@@ -1,4 +1,4 @@
-# weather_app
+# Weather APP
 A simple weather mobile-friendly web app built with React.
 
 ## Table of Contents
