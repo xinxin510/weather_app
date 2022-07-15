@@ -28,7 +28,7 @@ Check daily weather (hourly forcast) and 10-day forcast in your city or in any p
 6. Toggle between Celsius and Fahrenheit temperatures to get more adequate results.
 7. Implemented custom tooltips to help users understand the metrics presented on the weather cards.
 
-![](https://www.dropbox.com/s/dxdzqqz3btkvql8/weather_app_record.gif?raw=1)
+![]([https://www.dropbox.com/s/dxdzqqz3btkvql8/weather_app_record.gif?raw=1](https://uc3df7267ab1a2521d7c31026515.dl.dropboxusercontent.com/cd/0/inline/BpFlI8AcL95NgiDJrEQwjLVnvOc6Dso4DhAVua2P59Vpl4GTJlOqHZiz_HSDD3dXqYZEM3lkV5wn8OicRmXMfwSNP9JOSJpmLjHMU4xm8th3skzaeV-GokfoDtDr6k8a8voMpyZ59N5iLI7YHgTZDzKpJAC0FgthyxzdtMG0q9WT-A/file#))
 
 ## Installation
 1. Install dependencies:
