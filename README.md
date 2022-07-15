@@ -21,15 +21,17 @@ Wrote config files for Webpack and Babel from scratch, and set up the React app 
 ## Description
 Check daily weather (hourly forcast) and 10-day forcast in your city or in any place in the world. 
 1. On the initial page load, the weather of Maple Grove, MN is shown. Users can check the weather of cities using the search bar.
-![Weather search](https://user-images.githubusercontent.com/84343573/179140852-4ac454a8-fbdb-413b-927e-8ab21ce8795b.gif)
+![weather search](https://user-images.githubusercontent.com/84343573/179142020-5717b105-75d8-45c4-8455-2247fe2f6617.gif)
 2. View today's hourly forecasts till the end of the day.
 3. Check weather details, include sunrise, sunset, precipitation, humidity, wind, pressure, feels like and visibility.
+![hourly weather](https://user-images.githubusercontent.com/84343573/179142875-c297b5aa-ebcd-4734-99b6-0ecf84d2113a.gif)
 4. View daily forecasts for the next ten days, including the high and low temperatures.
 5. Select a day to view hourly forcast and weather details.
+![forcast](https://user-images.githubusercontent.com/84343573/179143362-692d44bf-e9d0-449c-b1d7-4291971cff9d.gif)
 6. Toggle between Celsius and Fahrenheit temperatures to get more adequate results.
+![toggle](https://user-images.githubusercontent.com/84343573/179143767-4a316350-0d90-4a88-87a1-d0c83f6f89b8.gif)
 7. Implemented custom tooltips to help users understand the metrics presented on the weather cards.
-
-![]([https://www.dropbox.com/s/dxdzqqz3btkvql8/weather_app_record.gif?raw=1](https://uc3df7267ab1a2521d7c31026515.dl.dropboxusercontent.com/cd/0/inline/BpFlI8AcL95NgiDJrEQwjLVnvOc6Dso4DhAVua2P59Vpl4GTJlOqHZiz_HSDD3dXqYZEM3lkV5wn8OicRmXMfwSNP9JOSJpmLjHMU4xm8th3skzaeV-GokfoDtDr6k8a8voMpyZ59N5iLI7YHgTZDzKpJAC0FgthyxzdtMG0q9WT-A/file#))
+![tooltip](https://user-images.githubusercontent.com/84343573/179144070-9a1090f0-1655-4b16-8e6b-c0f0464968d7.gif)
 
 ## Installation
 1. Install dependencies:
@@ -48,4 +50,3 @@ module.exports = {
 npm run start
 ```
 5. Open the project in your web browser http://localhost:8080/ 
-## Usage
