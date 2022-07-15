@@ -27,6 +27,9 @@ Check daily weather (hourly forcast) and 10-day forcast in your city or in any p
 5. Select a day to view hourly forcast and weather details.
 6. Toggle between Celsius and Fahrenheit temperatures to get more adequate results.
 7. Implemented custom tooltips to help users understand the metrics presented on the weather cards.
+
+![](https://www.dropbox.com/s/dxdzqqz3btkvql8/weather_app_record.gif?raw=1)
+
 ## Installation
 1. Install dependencies:
 ```bash
