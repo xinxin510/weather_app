@@ -20,6 +20,7 @@ Wrote config files for Webpack and Babel from scratch, and set up the React app 
 
 ## Description
 Check daily weather (hourly forcast) and 10-day forcast in your city or in any place in the world. 
+
 1. On the initial page load, the weather of Maple Grove, MN is shown. Users can check the weather of cities using the search bar.
 ![weather search](https://user-images.githubusercontent.com/84343573/179142020-5717b105-75d8-45c4-8455-2247fe2f6617.gif)
 2. View today's hourly forecasts till the end of the day.
