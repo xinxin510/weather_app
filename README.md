@@ -17,11 +17,13 @@ Check daily weather (hourly forcast) and 10-day forcast in your city or in any p
 ![weather search](https://user-images.githubusercontent.com/84343573/179142020-5717b105-75d8-45c4-8455-2247fe2f6617.gif)
 </br>
 2. View today's hourly forecasts till the end of the day.
+</br>
 3. Check weather details, include sunrise, sunset, precipitation, humidity, wind, pressure, feels like and visibility.
 
 ![hourly weather](https://user-images.githubusercontent.com/84343573/179142875-c297b5aa-ebcd-4734-99b6-0ecf84d2113a.gif)
 </br>
 4. View daily forecasts for the next ten days, including the high and low temperatures.
+</br>
 5. Select a day to view hourly forcast and weather details.
 
 ![forcast](https://user-images.githubusercontent.com/84343573/179143362-692d44bf-e9d0-449c-b1d7-4291971cff9d.gif)
